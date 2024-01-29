@@ -1,13 +1,13 @@
 INICIAR 
-    FAZER palavraMisteriosa = [j,a,v,a,s,c,r,i,p,t], palavraUsuario[]
-    FAZER inputUsuario=0 ;
-    FAZER contador
-    ENQUANTO (palavraUsuario!=palavraMisteriosa) FAÇA{
+    FAZER palavraMisteriosa = [j,a,v,a,s,c,r,i,p,t], palavraDescoberta[]
+    FAZER tamanho = palavraMisteriosa.lenght;
+    FAZER inputUsuario;
+    FAZER contador = 0;
+    ENQUANTO (palavraDescoberta!=palavraMisteriosa){
         LER inputUsuario
-        FAZER palavraUsuario.push(inputUsuario);
-            SE palavraUsuario[inputUsuario] == palavraMisteriosa[contador];
-            ESCREVER palavraMisteriosa [contador];
-                SENAO contador++;
+        PARA contador=0 até contador<tamanho
+            SE palavraDescoberta[contador] == inputUsuario;
+               palavraDescoberta[contador] = inputUsuario;
 
 }
 FINALIZR
