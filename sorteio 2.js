@@ -9,7 +9,8 @@
   //          console.log(palavraMisteriosa [contador]);
  //           }else contador++;
 
-var palavraMisteriosa = [j,a,v,a,s,c,r,i,p,t], palavraDescoberta[];
+var palavraMisteriosa = [j,a,v,a,s,c,r,i,p,t]; 
+var palavraDescoberta = [];
 var tamanho = palavraMisteriosa.lenght;
 var inputUsuario;
 var contador = 0;
