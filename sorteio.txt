@@ -10,7 +10,7 @@ iniciar
 
         if (vetorSorteio!=vetorUsuario){
             break
-
+            
         }
 
 }    
