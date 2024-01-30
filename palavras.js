@@ -25,3 +25,5 @@ var palavras = [
     [['m','o','r','t','e'],['vida']],
     [['h','i','s','t','ó','r','i','a','s'],['lendas']],
 ];
+
+console.log(palavras[][][])
