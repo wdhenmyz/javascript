@@ -9,4 +9,12 @@ function escrevaAsterisco(){
     }
 }
 
-escrevaAsterisco();
+var repeticoes = 100;
+function reproduzir(){
+    for(var aux = 1; aux <= repeticoes; aux++){
+        escrevaAsterisco();
+    }
+
+}
+
+reproduzir();
