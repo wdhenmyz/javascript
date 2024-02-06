@@ -1,40 +1,30 @@
-const divisor = 11;
-//e: vetor de numeros
-//s: acumulador de numeros (numero inteiro)
-function calculaAcumulador(vetorDeNumeros){
-    var vetorDeNumeros;
-    var tamanhoDoVetorDeNumeros = vetorDeNumeros.length;
-    var acumulador = 0;
+function validarCpf() {
+    var cpfNumerico = [];
+    var cpf = document.getElementById("cpf").value;
 
-    for (let i=0;i<vetorDeNumeros.length;i++){
-        console.log(vetorDeNumeros[i]);
+    for (let i = 0; i < 9; i++) {
+        cpfNumerico[i] = Number(cpf[i]);
     }
-    //return (vetorDeNumeros);
-    console.log(tamanhoDoVetorDeNumeros)
+
+    cpfNumerico.push(calculaDigitoVerificador(cpfNumerico, 10));
+    cpfNumerico.push(calculaDigitoVerificador(cpfNumerico, 11));
+
+    document.getElementById("resposta").innerHTML = cpfNumerico.join(''); //transforma o vetor em string
+    return cpfNumerico;
 }
 
-function calculaResto(acumulador){
-    var acumulador;
-    resto = acumulador % divisor;
-    return resto;
-}
-
-function digitoVerificador(resto){
-    var resto = calculaResto(acumulador);
-    if(resto==0 || resto==1){
-        return 0
-    }else{
-        return divisor-resto;
+function calculaDigitoVerificador(cpfNumerico, posicao) {
+    var acumulador = 0, posicao;
+    let i = 0;
+    while (i < cpfNumerico.length) {
+        acumulador = acumulador + (cpfNumerico[i] * posicao);
+        i++;
+        posicao--;
     }
+    //try 1
+    //return (11 - (acumulador % 11)) % 11;
+
+    //try 2
+    var resto = acumulador % 11;
+    return resto < 2 ? 0 : 11 - resto; //if(resto<2){return 0}else{return 11-resto} 
 }
-
-function validarcpf(){
-
-}
-
-//saida = calculaResto(500)
-//console.log(saida);
-a = calculaAcumulador([3,0,0,0,7,6,2,5,0])
-console.log(a)
-
-
